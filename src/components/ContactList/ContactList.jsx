@@ -1,6 +1,6 @@
 
 import { useSelector} from 'react-redux';
-import { getFilterValue } from 'redux/filter/slice';
+import { getFilterValue } from 'redux/filter/filter-slice';
 import sortContactsByName from 'utils/sortContactsByName';
 import ContactItem from 'components/ContactItem';
 import { FaRedo } from 'react-icons/fa';
