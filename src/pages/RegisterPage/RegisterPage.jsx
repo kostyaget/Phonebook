@@ -27,6 +27,8 @@ export default function RegisterPage() {
                 return setEmail(value);
             case 'password':
                 return setPassword(value);
+            
+            
         }
     };
 
