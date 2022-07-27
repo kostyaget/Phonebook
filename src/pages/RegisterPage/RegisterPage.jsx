@@ -23,12 +23,13 @@ export default function RegisterPage() {
         switch (name) {
             case 'name':
                 return setName(value);
+            
             case 'email':
                 return setEmail(value);
+            
             case 'password':
                 return setPassword(value);
-            
-            
+            default:
         }
     };
 
@@ -44,50 +45,51 @@ export default function RegisterPage() {
         formReset();
     };
     return (
-        <FormWrapper>
-            <FormTitle>Registration</FormTitle>
+    <FormWrapper>
+        <FormTitle>Registration</FormTitle>
 
-            <RegisterForm onSubmit={onFormSubmit} autoComplete="off">
-                <FormInputLabel htmlFor={nameInputId}>
-                    Name
-                    <FormInput
-                    type="text"
-                    name="name"
-                    placeholder="Enter your name"
-                    value={name}
-                    onChange={onInputChange}
-                    id={nameInputId}
-                    required
-                    />
-                </FormInputLabel>
+        <RegisterForm onSubmit={onFormSubmit} autoComplete="off">
+        <FormInputLabel htmlFor={nameInputId}>
+            Name
+            <FormInput
+            type="text"
+            name="name"
+            placeholder="Enter your name"
+            value={name}
+            onChange={onInputChange}
+            id={nameInputId}
+            required
+            />
+        </FormInputLabel>
 
-                <FormInputLabel htmlFor={emailInputId}>
-                    E-mail
-                    <FormInput
-                    type="text"
-                    name="email"
-                    placeholder="Enter your e-mail"
-                    value={email}
-                    onChange={onInputChange}
-                    id={emailInputId}
-                    required
-                    />
-                </FormInputLabel>
+        <FormInputLabel htmlFor={emailInputId}>
+            E-mail
+            <FormInput
+            type="email"
+            name="email"
+            placeholder="Enter your e-mail"
+            value={email}
+            onChange={onInputChange}
+            id={emailInputId}
+            required
+            />
+        </FormInputLabel>
 
-                <FormInputLabel htmlFor={passwordInputId}>
-                    Password
-                    <FormInput
-                    type="text"
-                    name="password"
-                    placeholder="Set password"
-                    value={password}
-                    onChange={onInputChange}
-                    id={passwordInputId}
-                    required
-                    />
-                </FormInputLabel>
-                <FormSubmitBtn type="submit">Register</FormSubmitBtn>
-            </RegisterForm>
-        </FormWrapper>
-    )
+        <FormInputLabel htmlFor={passwordInputId}>
+            Password
+            <FormInput
+            type="password"
+            name="password"
+            placeholder="Set password"
+            value={password}
+            onChange={onInputChange}
+            id={passwordInputId}
+            required
+            />
+        </FormInputLabel>
+
+        <FormSubmitBtn type="submit">Register</FormSubmitBtn>
+        </RegisterForm>
+    </FormWrapper>
+    );
 }
