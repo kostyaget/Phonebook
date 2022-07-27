@@ -17,8 +17,8 @@ export default function Layout() {
     <>
         <AppBar>
         <AppName title="PhoneBook" />
-        <Navigation />
-        {isLoggedIn ? <UserMenu /> : <AuthNav />}
+                <Navigation />
+                {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </AppBar>
 
         <Container>

@@ -21,37 +21,48 @@ export default function App() {
   );
 
   useEffect(() => {
-    dispatch(authOperations.fetchCurretUser());
-  }, [dispatch])
+    dispatch(authOperations.fetchCurrentUser());
+  }, [dispatch]);
 
   return (
     !isFetchingCurrentUser && (
       <Routes>
         <Route path="/" element={<Layout />}>
-          
-          <Route index element={
-            <PublicRoute>
-              <HomePage />
-            </PublicRoute>} />
-          
-          <Route path='register' element={
-            <PublicRoute redirectTo='/' restricted>
-              <RegisterPage />
-            </PublicRoute>} />
-          
-          <Route path='login' element={
-            <PublicRoute redirectTo='/contacts' restricted>
-              <LoginPage />
-            </PublicRoute>} />
-          
-          <Route path='contacts' element={
-            <PrivateRoute redirectTo='/login'>
-              <PhoneBookPage />
-            </PrivateRoute>} />
-          
-          <Route path='*' element={<NotFoundPage/>}/>
+          <Route
+            index
+            element={
+              <PublicRoute>
+                <HomePage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="register"
+            element={
+              <PublicRoute redirectTo="/" restricted>
+                <RegisterPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <PublicRoute redirectTo="/contacts" restricted>
+                <LoginPage />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/login">
+                <PhoneBookPage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     )
   );
-};
+}

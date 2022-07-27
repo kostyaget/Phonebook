@@ -4,19 +4,27 @@ export const phoneBookApi = createApi({
     reducerPath: 'phoneBookApi',
 
     baseQuery: fetchBaseQuery({
-        baseUrl: 'https://62da5bc5e56f6d82a75f70d8.mockapi.io/contacts',
+        baseUrl: 'https://connections-api.herokuapp.com',
+        prepareHeaders: (headers, { getState }) => {
+            const token = getState().auth.token;
+
+            if (token) {
+                headers.set('authorization', `Bearer ${token}`)
+            }
+            return headers;
+        },
     }),
     tagTypes: ['Contact'],
 
     endpoints: bulder => ({
         getAllContacts: bulder.query({
-            query: () => `/`,
+            query: () => `/contacts`,
             providesTags: ['Contact'],
         }),
 
         addContact: bulder.mutation({
             query: newContact => ({
-                url: `/`,
+                url: `/contacts`,
                 method: 'POST',
                 body: newContact,
             }),
@@ -25,7 +33,7 @@ export const phoneBookApi = createApi({
 
         deleteContact: bulder.mutation({
             query: contactId => ({
-                url: `/${contactId}`,
+                url: `/contacts/${contactId}`,
                 method: 'DELETE',
             }),
             invalidatesTags: ['Contact'],

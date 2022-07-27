@@ -3,10 +3,14 @@ import { Navigate } from "react-router-dom";
 import { authSelectors } from 'redux/auth';
 import PropTyes from 'prop-types';
 
-export default function PrivateRoute({ children, redirectTo = '/' }) {
+export default function PrivateRoute({ children, redirectTo = '/',restricted = false, }) {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);
-    return isLoggedIn ? children : <Navigate to={redirectTo} replace={true} />;
-}
+    
+    const shouldRedirect = isLoggedIn && restricted;
+    return shouldRedirect ? (
+        <Navigate to={redirectTo} replace={true} />
+    ) : (children);
+} 
 
 PrivateRoute.protoTypes = {
     children: PropTyes.node.isRequired,

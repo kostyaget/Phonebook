@@ -7,7 +7,7 @@ export default function AppName({ title }) {
         <>
             {title && (
                 <MainTitle>
-                    <link>{title}</link>
+                    <Link to='/'>{title}</Link>
                 </MainTitle>
             )}
         </>
