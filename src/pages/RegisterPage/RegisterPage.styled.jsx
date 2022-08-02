@@ -12,7 +12,7 @@ export const FormTitle = styled.h1`
   font-size: 30px;
   text-align: center;
   text-transform: uppercase;
-  color: #3498db;
+  color: rgba(144,58,180,1);
 `;
 
 export const RegisterForm = styled.form`
@@ -21,7 +21,8 @@ export const RegisterForm = styled.form`
   flex-direction: column;
   border: 1px solid darkgray;
   border-radius: 5px;
-  background-color: white;
+  background: rgb(144,58,180);
+  background: linear-gradient(90deg, rgba(144,58,180,1) 40%, rgba(69,69,252,1) 86%);
   box-shadow: 0px 2px 10px -3px;
 `;
 
@@ -53,13 +54,13 @@ export const FormSubmitBtn = styled.button`
   text-transform: uppercase;
   border: 0px;
   border-radius: 20px;
-  background-color: #3498db;
+  background-color:rgba(69,69,252,1);
   color: white;
   box-shadow: none;
   transition: all 250ms ease-in-out;
   :hover,
   :focus {
-    background-color: #39b0ff;
+    background-color: rgba(144,58,180,1);
     box-shadow: 0px 4px 4px #00000026, inset 0px 0px 0px 0px #0000004d;
   }
 `;

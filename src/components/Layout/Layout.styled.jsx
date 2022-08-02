@@ -13,6 +13,7 @@ padding-bottom: 12px;
 
 display: flex;
 align-items: center;
-background: linear-gradient(to right, #232526, #414345);
+background: rgb(144,58,180);
+background: linear-gradient(90deg, rgba(144,58,180,1) 40%, rgba(69,69,252,1) 86%);
 box-shadow: 0 8px 6px -6px black;
 `;

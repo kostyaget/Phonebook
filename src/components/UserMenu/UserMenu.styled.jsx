@@ -12,7 +12,7 @@ export const Avatar = styled.div`
 `;
 
 export const UserName = styled.span`
-  color: #ffffff;
+  color: #000000;
   font-size: 22px;
   margin-right: 30px;
 `;
@@ -25,6 +25,6 @@ export const LogOutBtn = styled.button`
   transition: all 250ms ease-in-out;
   :hover,
   :focus {
-    color: #39b0ff;
+    color: rgb(144,58,180);
   }
 `;

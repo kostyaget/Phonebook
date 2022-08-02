@@ -17,7 +17,7 @@ transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-shadow: 1px 0 11px rgba(255 255 255 / 80%);
 }
 &.active {
-    color: #39b0ff;
+    color: #000000 ;
     text-shadow: 1px 0 11px rgb(52, 152, 219);
 }
 `;
